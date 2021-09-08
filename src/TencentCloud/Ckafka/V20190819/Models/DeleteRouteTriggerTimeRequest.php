@@ -18,24 +18,20 @@ namespace TencentCloud\Ckafka\V20190819\Models;
 use TencentCloud\Common\AbstractModel;
 
 /**
- * 操作类型返回的Data结构
+ * DeleteRouteTriggerTime请求参数结构体
  *
- * @method integer getFlowId() 获取FlowId11
-注意：此字段可能返回 null，表示取不到有效值。
- * @method void setFlowId(integer $FlowId) 设置FlowId11
-注意：此字段可能返回 null，表示取不到有效值。
+ * @method string getDelayTime() 获取修改时间
+ * @method void setDelayTime(string $DelayTime) 设置修改时间
  */
-class OperateResponseData extends AbstractModel
+class DeleteRouteTriggerTimeRequest extends AbstractModel
 {
     /**
-     * @var integer FlowId11
-注意：此字段可能返回 null，表示取不到有效值。
+     * @var string 修改时间
      */
-    public $FlowId;
+    public $DelayTime;
 
     /**
-     * @param integer $FlowId FlowId11
-注意：此字段可能返回 null，表示取不到有效值。
+     * @param string $DelayTime 修改时间
      */
     function __construct()
     {
@@ -50,8 +46,8 @@ class OperateResponseData extends AbstractModel
         if ($param === null) {
             return;
         }
-        if (array_key_exists("FlowId",$param) and $param["FlowId"] !== null) {
-            $this->FlowId = $param["FlowId"];
+        if (array_key_exists("DelayTime",$param) and $param["DelayTime"] !== null) {
+            $this->DelayTime = $param["DelayTime"];
         }
     }
 }
