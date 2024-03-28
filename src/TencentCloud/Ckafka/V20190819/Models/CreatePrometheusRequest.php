@@ -18,28 +18,36 @@ namespace TencentCloud\Ckafka\V20190819\Models;
 use TencentCloud\Common\AbstractModel;
 
 /**
- * DescribeGroupInfo请求参数结构体
+ * CreatePrometheus请求参数结构体
  *
- * @method string getInstanceId() 获取（过滤条件）按照实例 ID 过滤。
- * @method void setInstanceId(string $InstanceId) 设置（过滤条件）按照实例 ID 过滤。
- * @method array getGroupList() 获取Kafka 消费分组，Consumer-group，这里是数组形式，示例：["xxx","yyy"]
- * @method void setGroupList(array $GroupList) 设置Kafka 消费分组，Consumer-group，这里是数组形式，示例：["xxx","yyy"]
+ * @method string getInstanceId() 获取ckafka实例id
+ * @method void setInstanceId(string $InstanceId) 设置ckafka实例id
+ * @method string getVpcId() 获取vpc地址
+ * @method void setVpcId(string $VpcId) 设置vpc地址
+ * @method string getSubnetId() 获取子网地址
+ * @method void setSubnetId(string $SubnetId) 设置子网地址
  */
-class DescribeGroupInfoRequest extends AbstractModel
+class CreatePrometheusRequest extends AbstractModel
 {
     /**
-     * @var string （过滤条件）按照实例 ID 过滤。
+     * @var string ckafka实例id
      */
     public $InstanceId;
 
     /**
-     * @var array Kafka 消费分组，Consumer-group，这里是数组形式，示例：["xxx","yyy"]
+     * @var string vpc地址
      */
-    public $GroupList;
+    public $VpcId;
 
     /**
-     * @param string $InstanceId （过滤条件）按照实例 ID 过滤。
-     * @param array $GroupList Kafka 消费分组，Consumer-group，这里是数组形式，示例：["xxx","yyy"]
+     * @var string 子网地址
+     */
+    public $SubnetId;
+
+    /**
+     * @param string $InstanceId ckafka实例id
+     * @param string $VpcId vpc地址
+     * @param string $SubnetId 子网地址
      */
     function __construct()
     {
@@ -58,8 +66,12 @@ class DescribeGroupInfoRequest extends AbstractModel
             $this->InstanceId = $param["InstanceId"];
         }
 
-        if (array_key_exists("GroupList",$param) and $param["GroupList"] !== null) {
-            $this->GroupList = $param["GroupList"];
+        if (array_key_exists("VpcId",$param) and $param["VpcId"] !== null) {
+            $this->VpcId = $param["VpcId"];
+        }
+
+        if (array_key_exists("SubnetId",$param) and $param["SubnetId"] !== null) {
+            $this->SubnetId = $param["SubnetId"];
         }
     }
 }

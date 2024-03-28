@@ -18,28 +18,20 @@ namespace TencentCloud\Ckafka\V20190819\Models;
 use TencentCloud\Common\AbstractModel;
 
 /**
- * DescribeGroupInfo请求参数结构体
+ * DescribePrometheus请求参数结构体
  *
- * @method string getInstanceId() 获取（过滤条件）按照实例 ID 过滤。
- * @method void setInstanceId(string $InstanceId) 设置（过滤条件）按照实例 ID 过滤。
- * @method array getGroupList() 获取Kafka 消费分组，Consumer-group，这里是数组形式，示例：["xxx","yyy"]
- * @method void setGroupList(array $GroupList) 设置Kafka 消费分组，Consumer-group，这里是数组形式，示例：["xxx","yyy"]
+ * @method string getInstanceId() 获取ckafka实例Id
+ * @method void setInstanceId(string $InstanceId) 设置ckafka实例Id
  */
-class DescribeGroupInfoRequest extends AbstractModel
+class DescribePrometheusRequest extends AbstractModel
 {
     /**
-     * @var string （过滤条件）按照实例 ID 过滤。
+     * @var string ckafka实例Id
      */
     public $InstanceId;
 
     /**
-     * @var array Kafka 消费分组，Consumer-group，这里是数组形式，示例：["xxx","yyy"]
-     */
-    public $GroupList;
-
-    /**
-     * @param string $InstanceId （过滤条件）按照实例 ID 过滤。
-     * @param array $GroupList Kafka 消费分组，Consumer-group，这里是数组形式，示例：["xxx","yyy"]
+     * @param string $InstanceId ckafka实例Id
      */
     function __construct()
     {
@@ -56,10 +48,6 @@ class DescribeGroupInfoRequest extends AbstractModel
         }
         if (array_key_exists("InstanceId",$param) and $param["InstanceId"] !== null) {
             $this->InstanceId = $param["InstanceId"];
-        }
-
-        if (array_key_exists("GroupList",$param) and $param["GroupList"] !== null) {
-            $this->GroupList = $param["GroupList"];
         }
     }
 }
