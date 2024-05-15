@@ -18,155 +18,155 @@ namespace TencentCloud\Ckafka\V20190819\Models;
 use TencentCloud\Common\AbstractModel;
 
 /**
- * MongoDB类型入参
+ * 创建MQTT 为Source的Data Hub Task参数
  *
- * @method string getDatabase() 获取MongoDB的数据库名称
+ * @method string getTopics() 获取需要同步的MQTT Topic列表, CSV格式
 注意：此字段可能返回 null，表示取不到有效值。
- * @method void setDatabase(string $Database) 设置MongoDB的数据库名称
+ * @method void setTopics(string $Topics) 设置需要同步的MQTT Topic列表, CSV格式
 注意：此字段可能返回 null，表示取不到有效值。
- * @method string getCollection() 获取MongoDB的集群
+ * @method boolean getCleanSession() 获取MQTT clean-session
 注意：此字段可能返回 null，表示取不到有效值。
- * @method void setCollection(string $Collection) 设置MongoDB的集群
+ * @method void setCleanSession(boolean $CleanSession) 设置MQTT clean-session
 注意：此字段可能返回 null，表示取不到有效值。
- * @method boolean getCopyExisting() 获取是否复制存量数据，默认传参true
+ * @method string getResource() 获取MQTT instance-id
 注意：此字段可能返回 null，表示取不到有效值。
- * @method void setCopyExisting(boolean $CopyExisting) 设置是否复制存量数据，默认传参true
+ * @method void setResource(string $Resource) 设置MQTT instance-id
 注意：此字段可能返回 null，表示取不到有效值。
- * @method string getResource() 获取实例资源
+ * @method string getIp() 获取MQTT实例VIP
 注意：此字段可能返回 null，表示取不到有效值。
- * @method void setResource(string $Resource) 设置实例资源
+ * @method void setIp(string $Ip) 设置MQTT实例VIP
 注意：此字段可能返回 null，表示取不到有效值。
- * @method string getIp() 获取MongoDB的连接ip
+ * @method integer getPort() 获取MQTT VIP 端口
 注意：此字段可能返回 null，表示取不到有效值。
- * @method void setIp(string $Ip) 设置MongoDB的连接ip
+ * @method void setPort(integer $Port) 设置MQTT VIP 端口
 注意：此字段可能返回 null，表示取不到有效值。
- * @method integer getPort() 获取MongoDB的连接port
+ * @method string getUserName() 获取MQTT实例用户名
 注意：此字段可能返回 null，表示取不到有效值。
- * @method void setPort(integer $Port) 设置MongoDB的连接port
+ * @method void setUserName(string $UserName) 设置MQTT实例用户名
 注意：此字段可能返回 null，表示取不到有效值。
- * @method string getUserName() 获取MongoDB数据库用户名
+ * @method string getPassword() 获取MQTT实例内账户密码
 注意：此字段可能返回 null，表示取不到有效值。
- * @method void setUserName(string $UserName) 设置MongoDB数据库用户名
+ * @method void setPassword(string $Password) 设置MQTT实例内账户密码
 注意：此字段可能返回 null，表示取不到有效值。
- * @method string getPassword() 获取MongoDB数据库密码
+ * @method integer getQos() 获取QoS
 注意：此字段可能返回 null，表示取不到有效值。
- * @method void setPassword(string $Password) 设置MongoDB数据库密码
+ * @method void setQos(integer $Qos) 设置QoS
 注意：此字段可能返回 null，表示取不到有效值。
- * @method string getListeningEvent() 获取监听事件类型，为空时表示全选。取值包括insert,update,replace,delete,invalidate,drop,dropdatabase,rename，多个类型间使用,逗号分隔
+ * @method integer getMaxTasks() 获取tasks.max 订阅Topic的并发Task个数, 默认为1; 当设置大于1时, 使用Shared Subscription
 注意：此字段可能返回 null，表示取不到有效值。
- * @method void setListeningEvent(string $ListeningEvent) 设置监听事件类型，为空时表示全选。取值包括insert,update,replace,delete,invalidate,drop,dropdatabase,rename，多个类型间使用,逗号分隔
+ * @method void setMaxTasks(integer $MaxTasks) 设置tasks.max 订阅Topic的并发Task个数, 默认为1; 当设置大于1时, 使用Shared Subscription
 注意：此字段可能返回 null，表示取不到有效值。
- * @method string getReadPreference() 获取主从优先级，默认主节点
+ * @method string getServiceVip() 获取MQTT 实例的Service VIP
 注意：此字段可能返回 null，表示取不到有效值。
- * @method void setReadPreference(string $ReadPreference) 设置主从优先级，默认主节点
+ * @method void setServiceVip(string $ServiceVip) 设置MQTT 实例的Service VIP
 注意：此字段可能返回 null，表示取不到有效值。
- * @method string getPipeline() 获取聚合管道
+ * @method string getUniqVpcId() 获取MQTT实例的VPC ID
 注意：此字段可能返回 null，表示取不到有效值。
- * @method void setPipeline(string $Pipeline) 设置聚合管道
+ * @method void setUniqVpcId(string $UniqVpcId) 设置MQTT实例的VPC ID
 注意：此字段可能返回 null，表示取不到有效值。
- * @method boolean getSelfBuilt() 获取是否为自建集群
+ * @method boolean getSelfBuilt() 获取是否为自建集群, MQTT只支持非自建集群
 注意：此字段可能返回 null，表示取不到有效值。
- * @method void setSelfBuilt(boolean $SelfBuilt) 设置是否为自建集群
+ * @method void setSelfBuilt(boolean $SelfBuilt) 设置是否为自建集群, MQTT只支持非自建集群
 注意：此字段可能返回 null，表示取不到有效值。
  */
-class MongoDBParam extends AbstractModel
+class MqttParam extends AbstractModel
 {
     /**
-     * @var string MongoDB的数据库名称
+     * @var string 需要同步的MQTT Topic列表, CSV格式
 注意：此字段可能返回 null，表示取不到有效值。
      */
-    public $Database;
+    public $Topics;
 
     /**
-     * @var string MongoDB的集群
+     * @var boolean MQTT clean-session
 注意：此字段可能返回 null，表示取不到有效值。
      */
-    public $Collection;
+    public $CleanSession;
 
     /**
-     * @var boolean 是否复制存量数据，默认传参true
-注意：此字段可能返回 null，表示取不到有效值。
-     */
-    public $CopyExisting;
-
-    /**
-     * @var string 实例资源
+     * @var string MQTT instance-id
 注意：此字段可能返回 null，表示取不到有效值。
      */
     public $Resource;
 
     /**
-     * @var string MongoDB的连接ip
+     * @var string MQTT实例VIP
 注意：此字段可能返回 null，表示取不到有效值。
      */
     public $Ip;
 
     /**
-     * @var integer MongoDB的连接port
+     * @var integer MQTT VIP 端口
 注意：此字段可能返回 null，表示取不到有效值。
      */
     public $Port;
 
     /**
-     * @var string MongoDB数据库用户名
+     * @var string MQTT实例用户名
 注意：此字段可能返回 null，表示取不到有效值。
      */
     public $UserName;
 
     /**
-     * @var string MongoDB数据库密码
+     * @var string MQTT实例内账户密码
 注意：此字段可能返回 null，表示取不到有效值。
      */
     public $Password;
 
     /**
-     * @var string 监听事件类型，为空时表示全选。取值包括insert,update,replace,delete,invalidate,drop,dropdatabase,rename，多个类型间使用,逗号分隔
+     * @var integer QoS
 注意：此字段可能返回 null，表示取不到有效值。
      */
-    public $ListeningEvent;
+    public $Qos;
 
     /**
-     * @var string 主从优先级，默认主节点
+     * @var integer tasks.max 订阅Topic的并发Task个数, 默认为1; 当设置大于1时, 使用Shared Subscription
 注意：此字段可能返回 null，表示取不到有效值。
      */
-    public $ReadPreference;
+    public $MaxTasks;
 
     /**
-     * @var string 聚合管道
+     * @var string MQTT 实例的Service VIP
 注意：此字段可能返回 null，表示取不到有效值。
      */
-    public $Pipeline;
+    public $ServiceVip;
 
     /**
-     * @var boolean 是否为自建集群
+     * @var string MQTT实例的VPC ID
+注意：此字段可能返回 null，表示取不到有效值。
+     */
+    public $UniqVpcId;
+
+    /**
+     * @var boolean 是否为自建集群, MQTT只支持非自建集群
 注意：此字段可能返回 null，表示取不到有效值。
      */
     public $SelfBuilt;
 
     /**
-     * @param string $Database MongoDB的数据库名称
+     * @param string $Topics 需要同步的MQTT Topic列表, CSV格式
 注意：此字段可能返回 null，表示取不到有效值。
-     * @param string $Collection MongoDB的集群
+     * @param boolean $CleanSession MQTT clean-session
 注意：此字段可能返回 null，表示取不到有效值。
-     * @param boolean $CopyExisting 是否复制存量数据，默认传参true
+     * @param string $Resource MQTT instance-id
 注意：此字段可能返回 null，表示取不到有效值。
-     * @param string $Resource 实例资源
+     * @param string $Ip MQTT实例VIP
 注意：此字段可能返回 null，表示取不到有效值。
-     * @param string $Ip MongoDB的连接ip
+     * @param integer $Port MQTT VIP 端口
 注意：此字段可能返回 null，表示取不到有效值。
-     * @param integer $Port MongoDB的连接port
+     * @param string $UserName MQTT实例用户名
 注意：此字段可能返回 null，表示取不到有效值。
-     * @param string $UserName MongoDB数据库用户名
+     * @param string $Password MQTT实例内账户密码
 注意：此字段可能返回 null，表示取不到有效值。
-     * @param string $Password MongoDB数据库密码
+     * @param integer $Qos QoS
 注意：此字段可能返回 null，表示取不到有效值。
-     * @param string $ListeningEvent 监听事件类型，为空时表示全选。取值包括insert,update,replace,delete,invalidate,drop,dropdatabase,rename，多个类型间使用,逗号分隔
+     * @param integer $MaxTasks tasks.max 订阅Topic的并发Task个数, 默认为1; 当设置大于1时, 使用Shared Subscription
 注意：此字段可能返回 null，表示取不到有效值。
-     * @param string $ReadPreference 主从优先级，默认主节点
+     * @param string $ServiceVip MQTT 实例的Service VIP
 注意：此字段可能返回 null，表示取不到有效值。
-     * @param string $Pipeline 聚合管道
+     * @param string $UniqVpcId MQTT实例的VPC ID
 注意：此字段可能返回 null，表示取不到有效值。
-     * @param boolean $SelfBuilt 是否为自建集群
+     * @param boolean $SelfBuilt 是否为自建集群, MQTT只支持非自建集群
 注意：此字段可能返回 null，表示取不到有效值。
      */
     function __construct()
@@ -182,16 +182,12 @@ class MongoDBParam extends AbstractModel
         if ($param === null) {
             return;
         }
-        if (array_key_exists("Database",$param) and $param["Database"] !== null) {
-            $this->Database = $param["Database"];
+        if (array_key_exists("Topics",$param) and $param["Topics"] !== null) {
+            $this->Topics = $param["Topics"];
         }
 
-        if (array_key_exists("Collection",$param) and $param["Collection"] !== null) {
-            $this->Collection = $param["Collection"];
-        }
-
-        if (array_key_exists("CopyExisting",$param) and $param["CopyExisting"] !== null) {
-            $this->CopyExisting = $param["CopyExisting"];
+        if (array_key_exists("CleanSession",$param) and $param["CleanSession"] !== null) {
+            $this->CleanSession = $param["CleanSession"];
         }
 
         if (array_key_exists("Resource",$param) and $param["Resource"] !== null) {
@@ -214,16 +210,20 @@ class MongoDBParam extends AbstractModel
             $this->Password = $param["Password"];
         }
 
-        if (array_key_exists("ListeningEvent",$param) and $param["ListeningEvent"] !== null) {
-            $this->ListeningEvent = $param["ListeningEvent"];
+        if (array_key_exists("Qos",$param) and $param["Qos"] !== null) {
+            $this->Qos = $param["Qos"];
         }
 
-        if (array_key_exists("ReadPreference",$param) and $param["ReadPreference"] !== null) {
-            $this->ReadPreference = $param["ReadPreference"];
+        if (array_key_exists("MaxTasks",$param) and $param["MaxTasks"] !== null) {
+            $this->MaxTasks = $param["MaxTasks"];
         }
 
-        if (array_key_exists("Pipeline",$param) and $param["Pipeline"] !== null) {
-            $this->Pipeline = $param["Pipeline"];
+        if (array_key_exists("ServiceVip",$param) and $param["ServiceVip"] !== null) {
+            $this->ServiceVip = $param["ServiceVip"];
+        }
+
+        if (array_key_exists("UniqVpcId",$param) and $param["UniqVpcId"] !== null) {
+            $this->UniqVpcId = $param["UniqVpcId"];
         }
 
         if (array_key_exists("SelfBuilt",$param) and $param["SelfBuilt"] !== null) {
