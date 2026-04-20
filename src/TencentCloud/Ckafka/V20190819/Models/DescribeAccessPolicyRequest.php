@@ -18,20 +18,28 @@ namespace TencentCloud\Ckafka\V20190819\Models;
 use TencentCloud\Common\AbstractModel;
 
 /**
- * PauseDatahubTask请求参数结构体
+ * DescribeAccessPolicy请求参数结构体
  *
- * @method string getTaskId() 获取<p>任务id</p>
- * @method void setTaskId(string $TaskId) 设置<p>任务id</p>
+ * @method string getInstanceId() 获取<p>实例ID</p>
+ * @method void setInstanceId(string $InstanceId) 设置<p>实例ID</p>
+ * @method integer getRouteId() 获取<p>路由ID</p>
+ * @method void setRouteId(integer $RouteId) 设置<p>路由ID</p>
  */
-class PauseDatahubTaskRequest extends AbstractModel
+class DescribeAccessPolicyRequest extends AbstractModel
 {
     /**
-     * @var string <p>任务id</p>
+     * @var string <p>实例ID</p>
      */
-    public $TaskId;
+    public $InstanceId;
 
     /**
-     * @param string $TaskId <p>任务id</p>
+     * @var integer <p>路由ID</p>
+     */
+    public $RouteId;
+
+    /**
+     * @param string $InstanceId <p>实例ID</p>
+     * @param integer $RouteId <p>路由ID</p>
      */
     function __construct()
     {
@@ -46,8 +54,12 @@ class PauseDatahubTaskRequest extends AbstractModel
         if ($param === null) {
             return;
         }
-        if (array_key_exists("TaskId",$param) and $param["TaskId"] !== null) {
-            $this->TaskId = $param["TaskId"];
+        if (array_key_exists("InstanceId",$param) and $param["InstanceId"] !== null) {
+            $this->InstanceId = $param["InstanceId"];
+        }
+
+        if (array_key_exists("RouteId",$param) and $param["RouteId"] !== null) {
+            $this->RouteId = $param["RouteId"];
         }
     }
 }
