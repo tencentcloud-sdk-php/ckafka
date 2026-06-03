@@ -18,17 +18,17 @@ namespace TencentCloud\Ckafka\V20190819\Models;
 use TencentCloud\Common\AbstractModel;
 
 /**
- * CreateUser返回参数结构体
+ * CreateMetaDataAndOffsetSyncDatahubTask返回参数结构体
  *
- * @method JgwOperateResponse getResult() 获取<p>返回结果</p>
- * @method void setResult(JgwOperateResponse $Result) 设置<p>返回结果</p>
+ * @method CreateDatahubTaskRes getResult() 获取<p>返回结果</p>
+ * @method void setResult(CreateDatahubTaskRes $Result) 设置<p>返回结果</p>
  * @method string getRequestId() 获取唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。
  * @method void setRequestId(string $RequestId) 设置唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。
  */
-class CreateUserResponse extends AbstractModel
+class CreateMetaDataAndOffsetSyncDatahubTaskResponse extends AbstractModel
 {
     /**
-     * @var JgwOperateResponse <p>返回结果</p>
+     * @var CreateDatahubTaskRes <p>返回结果</p>
      */
     public $Result;
 
@@ -38,7 +38,7 @@ class CreateUserResponse extends AbstractModel
     public $RequestId;
 
     /**
-     * @param JgwOperateResponse $Result <p>返回结果</p>
+     * @param CreateDatahubTaskRes $Result <p>返回结果</p>
      * @param string $RequestId 唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。
      */
     function __construct()
@@ -55,7 +55,7 @@ class CreateUserResponse extends AbstractModel
             return;
         }
         if (array_key_exists("Result",$param) and $param["Result"] !== null) {
-            $this->Result = new JgwOperateResponse();
+            $this->Result = new CreateDatahubTaskRes();
             $this->Result->deserialize($param["Result"]);
         }
 
